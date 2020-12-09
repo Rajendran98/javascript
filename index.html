@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript</title>
+        <style>
+            body{
+                background-color: aqua;
+            }
+        </style>
+    </head>
+    <body>
+    <button onclick="document.getElementById('date').innerHTML=Date()">The time is?</button>
+    <p id="date"></p>
+    <p id="demo"></p>
+   <p id="demo1"></p>
+   <p id="num"></p>
+   <p id="array"></p>
+   <p id="parti"></p>
+
+
+   <br>
+
+   <hr>
+   <form onsubmit = "return guardarNumeros()">
+    <p>Please insert the items</p>
+    <input type="text" id="user" placeholder="UserName"><br><br>
+    <input type="text" id="pass" placeholder="Password"><br><br>
+    <input type="submit" value="Submit">
+   </form>
+   <br>
+   <p id="inputs"></p>
+    <script>
+        var a = 10;
+        var person = {
+                    firstName: "John",
+                    lastName : "Doe",
+                    id     :  5566
+                    };
+
+        document.getElementById("demo").innerHTML = "The Value is "+ a;
+        document.getElementById("demo1").innerHTML ="Object Value : " + person.firstName + " " + person.lastName;
+        document.getElementById("num").innerHTML = 
+        Number(true) + "<br>" +
+        Number(false) + "<br>" +
+        Number("10") + "<br>" + 
+        Number("10") + "<br>" +
+        Number("10") + "<br>" +
+        Number(" 10  ") + "<br>" +
+        Number("10.33") + "<br>" + 
+        Number("10,33") + "<br>" +
+        Number("10 33") + "<br>" +
+        Number("John");
+
+        var cars = ["Saab", "Volvo", "BMW"];
+        document.getElementById("array").innerHTML = cars;
+        document.getElementById("parti").innerHTML = "Array Value at 0 : " + cars[0];
+
+        function guardarNumeros(){
+        var UserName = [];
+        var Password = [];
+        var user = document.getElementById('user').value;
+        var pass = document.getElementById('pass').value;
+       UserName.push(user);
+       Password.push(pass);
+       document.getElementById("inputs").innerHTML = "UserName : " + UserName + "<br>" + "PassWord : " +  Password;
+        console.log(UserName);
+        console.log(Password);
+        return false;
+       
+        }
+
+      
+
+    </script>
+    </body>
+</html>
