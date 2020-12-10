@@ -19,6 +19,8 @@
 
 
    <br>
+   <button onclick="this.style.display='none'">Click to Remove Me!</button>
+   <br>
 
    <hr>
    <form onsubmit = "return guardarNumeros()">
@@ -29,6 +31,12 @@
    </form>
    <br>
    <p id="inputs"></p>
+
+   <p id="random"></p>
+   <p id="days"></p>
+
+   <p id="loop"></p>
+   
     <script>
         var a = 10;
         var person = {
@@ -56,10 +64,18 @@
         document.getElementById("parti").innerHTML = "Array Value at 0 : " + cars[0];
 
         function guardarNumeros(){
-        var UserName = [];
-        var Password = [];
+       var UserName = [];
+       var Password = [];
+      /*  var element = {};
+        var login = [];*/
         var user = document.getElementById('user').value;
         var pass = document.getElementById('pass').value;
+    /*    element.UserName = user;
+        element.Password = pass;
+        login.push(element);
+        console.log(login);*/
+
+        
        UserName.push(user);
        Password.push(pass);
        document.getElementById("inputs").innerHTML = "UserName : " + UserName + "<br>" + "PassWord : " +  Password;
@@ -69,7 +85,42 @@
        
         }
 
-      
+        var rand;
+        rand = Math.floor((Math.random() * 6) + 1);
+        document.getElementById("random").innerHTML = "Random Number : " + rand;
+
+
+        var cars = ["BMW", "Volvo", "Saab", "Ford"];
+        var i, len, text;
+        for (i = 0, len = cars.length, text = ""; i < len; i++) {
+        text += cars[i] + "<br>";
+        }
+        document.getElementById("loop").innerHTML = text;
+
+        var day;
+        switch (new Date().getDay()) {
+        case 0:
+            day = "Sunday";
+            break;
+        case 1:
+            day = "Monday";
+            break;
+        case 2:
+            day = "Tuesday";
+            break;
+        case 3:
+            day = "Wednesday";
+            break;
+        case 4:
+            day = "Thursday";
+            break;
+        case 5:
+            day = "Friday";
+            break;
+        case  6:
+            day = "Saturday";
+        }
+        document.getElementById("days").innerHTML = "Today is " + day;
 
     </script>
     </body>
